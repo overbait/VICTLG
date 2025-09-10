@@ -55,13 +55,13 @@ body {
     display: flex;
     flex-direction: column; /* Changed for new nav layout */
     gap: 1rem; /* Add space between header-top and nav */
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10mm;
+    border-bottom: 2px solid var(--border-color); /* Thicker border */
+    padding-bottom: 1rem; /* Reduced padding */
 }
 .header-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center; /* Vertically align items */
     width: 100%;
 }
 .header-left, .header-right {
@@ -69,8 +69,11 @@ body {
     align-items: center;
     gap: 1rem;
 }
+.header-right {
+    justify-content: flex-end;
+}
 .page-logo {
-    height: 10mm;
+    height: 12mm; /* Increased logo size */
 }
 .meta-block {
     display: flex;
@@ -89,7 +92,7 @@ body {
     flex-grow: 1;
     padding: 10mm 0;
     min-height: 0; /* Prevents flexbox overflow issues */
-    overflow-y: auto; /* Allows content to scroll if it exceeds page height */
+    /* overflow-y: auto; REMOVED as per user request */
 }
 .content-cover {
     text-align: center;
@@ -158,13 +161,14 @@ body {
     font-weight: 700;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Reduced size */
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
+    margin-top: 0; /* Reduced space */
 }
 h3 {
     font-size: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Reduced space */
 }
 p {
     font-size: 0.9rem;
@@ -174,50 +178,48 @@ p {
 /* --- Product Grid & Card Styles --- */
 .product-grid {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: 0.75rem; /* Reduced gap */
+    margin-top: 1rem; /* Reduced space */
 }
 
 .product-card {
     display: flex;
-    /* background-color removed for a unified look */
     border-radius: 4px;
     overflow: hidden;
-    /* box-shadow removed for minimalism */
 }
 
 .product-image-placeholder {
-    width: 150px;
+    width: 180px; /* Increased width */
     flex-shrink: 0;
     background-color: #d0dce2; /* Placeholder color */
 }
 
 .product-details {
-    padding: 1rem 1.5rem;
+    background-color: #f0f0f0; /* Added background color */
+    padding: 0.75rem 1rem; /* Reduced padding */
     flex-grow: 1;
-    /* background-image removed as per user feedback */
 }
 
 .product-details h4 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0; /* Reduced margin */
     font-family: var(--font-main);
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reduced font size */
     font-weight: 700;
 }
 
 .spec {
     display: flex;
     align-items: baseline; /* Align text nicely */
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 0.5rem;
+    font-size: 0.75rem; /* Reduced font size */
+    margin-bottom: 0.4rem; /* Reduced margin */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Thin border */
+    padding-bottom: 0.4rem; /* Reduced padding */
 }
 
 .spec-label {
     font-weight: 500;
     color: #111; /* Darker color for better contrast */
-    width: 140px; /* Give it a fixed width to align values */
+    width: 120px; /* Adjusted width */
     flex-shrink: 0; /* Prevent it from shrinking */
 }
 
@@ -262,7 +264,7 @@ p {
     margin: 0; /* Reset margins */
     padding: 0; /* Reset padding */
     border: none; /* Remove border */
-    align-self: flex-start; /* Align to the left within the header */
+    align-items: center; /* Align items vertically */
 }
 .product-nav a {
     text-decoration: none;
