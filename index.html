@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VI Systems - Product Catalog 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="main-header">
-        <img src="media/Vislogomain.png" alt="VI Systems Logo" id="logo">
+    <nav id="top-nav">
+        <div id="nav-links">
+            <!-- Links will be dynamically generated or hardcoded here -->
+            <a href="#cover" class="nav-link">Cover</a>
+            <a href="#toc" class="nav-link">Contents</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#products" class="nav-link">Products</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
         <button id="export-pdf-btn">Export to PDF</button>
-    </header>
+    </nav>
 
     <main id="catalog-container">
         <!-- Page 1: Cover -->
-        <section id="cover" class="page">
+        <section id="cover" class="page active">
             <div class="page-content">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
                 <h1>Product Catalog 2025</h1>
                 <p>Fiber Optics Components and Services</p>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 2: Welcome -->
@@ -32,9 +40,6 @@
                 <p>Our portfolio includes Vertical Cavity Surface-Emitting Lasers (VCSELs) and PIN photodiodes delivering speeds up to 224 Gbps per channel, alongside driver and amplifier ICs operating up to 56 Gbps. Our latest generation components enable energy-efficient 400 Gbps PAM-4 transmission using Short Wave Division Multiplexing (SWDM).</p>
                 <p>By partnering with leading global foundries, we deliver a unique combination of high speed, low power consumption, and reliability at a competitive cost, helping equipment manufacturers meet the ever-growing performance demands of the future.</p>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 3: Table of Contents -->
@@ -53,9 +58,6 @@
                     </ul>
                 </nav>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 4: Services -->
@@ -78,9 +80,6 @@
                 <h3>Modeling and Simulation</h3>
                 <p>We leverage advanced FEA, CFD, and optical simulation tools to model thermal distribution and optical modes, ensuring robust and reliable component design from the ground up.</p>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 5: VCSEL Transmitters -->
@@ -166,9 +165,6 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 6: Receivers & Photodetectors -->
@@ -206,9 +202,6 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 7: Integrated Circuits -->
@@ -288,9 +281,6 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 8: Component Chips -->
@@ -362,9 +352,6 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
 
         <!-- Page 9: Contact -->
@@ -389,11 +376,19 @@
                     <a href="https://www.linkedin.com/company/vi-systems-gmbh" target="_blank">LinkedIn</a>
                 </div>
             </div>
-            <footer class="page-footer">
-                <p>www.v-i-systems.com | Hardenbergstrasse 7, 10623 Berlin, Germany | Issue: 20250910-01</p>
-            </footer>
         </section>
     </main>
+
+    <footer id="page-footer-nav">
+        <button id="prev-page-btn">&lt;&lt;</button>
+        <div id="pagination-container">
+            <!-- Page numbers will be injected here by JS -->
+        </div>
+        <button id="next-page-btn">&gt;&gt;</button>
+        <div id="page-counter">
+            <span id="current-page-num">01</span> / <span id="total-page-num">09</span>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
