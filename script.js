@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Core Navigation Function ---
     function showPage(index) {
-        // Clamp the index to be within bounds
         const newIndex = Math.max(0, Math.min(index, totalPages - 1));
 
         pages.forEach((page, i) => {
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listener Setup ---
     function setupEventListeners() {
-        // Previous and Next buttons
+        // Previous and Next buttons on each page
         pages.forEach((page, index) => {
             const prevBtn = page.querySelector('.prev-btn');
             const nextBtn = page.querySelector('.next-btn');
@@ -30,15 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Table of Contents links
-        const tocLinks = document.querySelectorAll('#toc-list a');
+        const tocLinks = document.querySelectorAll('.toc-nav a');
         tocLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
                 const targetPage = document.querySelector(targetId);
-                const targetIndex = Array.from(pages).indexOf(targetPage);
-                if (targetIndex !== -1) {
-                    showPage(targetIndex);
+                if (targetPage) {
+                    const targetIndex = Array.from(pages).indexOf(targetPage);
+                    if (targetIndex !== -1) {
+                        showPage(targetIndex);
+                    }
                 }
             });
         });
@@ -53,43 +54,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- PDF Generation Logic ---
     function generatePdf() {
         const btn = document.getElementById('export-pdf-btn');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = 'Generating...';
+        const originalText = btn.textContent;
+        btn.textContent = 'GENERATING...';
         btn.disabled = true;
 
-        // Use a container that holds all pages for export
         const element = document.getElementById('catalog-container');
 
         const options = {
             margin: 0,
-            filename: 'VIS-Product-Catalog-2025-A4.pdf',
+            filename: 'VIS-Product-Catalog-2025-TechnoDoc.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: {
-                scale: 2, // A higher scale can improve quality
+                scale: 2,
                 useCORS: true,
-                logging: false
+                logging: false,
+                backgroundColor: null
             },
             jsPDF: {
                 unit: 'mm',
                 format: 'a4',
                 orientation: 'portrait'
             },
-            // Important: This tells html2pdf to process each top-level child of the element as a new page
             pagebreak: { mode: 'css', before: '.page' },
             enableLinks: true
         };
 
-        // We don't need to manually show/hide pages; html2pdf's pagebreak mode handles it.
         html2pdf().set(options).from(element).save().then(() => {
-            btn.innerHTML = originalText;
+            btn.textContent = originalText;
             btn.disabled = false;
         }).catch((err) => {
             console.error("Error generating PDF:", err);
-            btn.innerHTML = originalText;
+            btn.textContent = originalText;
             btn.disabled = false;
         });
     }
-
 
     // --- Initialization ---
     setupEventListeners();

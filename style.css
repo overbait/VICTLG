@@ -1,36 +1,35 @@
-/* --- Global Styles & Variables --- */
+/* ---
+Design System: Techno-Documentation
+Inspired by game UIs and technical schematics.
+--- */
+
+/* --- Variables & Fonts --- */
 :root {
-    --bg-color: #333333; /* Neutral dark gray background */
+    --bg-color: #d6e6eb; /* Light Blue/Grey-Blue */
     --page-bg-color: #FFFFFF;
-    --primary-text-color: #000000;
-    --secondary-text-color: #555555;
-    --accent-color: #00BFFF; /* Deep sky blue / cyan */
-    --border-color: #DDDDDD;
+    --text-color: #212529; /* Dark Grey */
+    --accent-color: #ffef00; /* Neon Yellow */
+    --border-color: #ced4da; /* Light Grey */
     --font-main: 'Orbitron', sans-serif;
     --font-body: 'Exo 2', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
 }
-
-/* --- Font Imports --- */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500&family=Orbitron:wght@400;500;700&display=swap');
 
 /* --- Base & Body --- */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
+    color: var(--text-color);
     margin: 0;
     padding: 2rem 0;
-    font-family: var(--font-body);
-    background-color: var(--bg-color);
-    color: var(--primary-text-color);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
+    text-transform: uppercase; /* Global uppercase as per brief */
 }
 
-/* --- Page Layout --- */
+/* --- A4 Page Layout --- */
 .page {
     display: none; /* Hide all pages by default */
     background-color: var(--page-bg-color);
@@ -38,182 +37,197 @@ body {
     height: 297mm;
     padding: 15mm;
     margin: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* A subtle shadow to lift the page */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     position: relative;
     box-sizing: border-box;
-    flex-shrink: 0; /* Prevent the page from shrinking */
-}
-
-.page.active {
-    display: block; /* Show only the active page */
-}
-
-/* --- In-Page Structure --- */
-.page {
-    display: none;
+    flex-shrink: 0;
     flex-direction: column;
 }
+
 .page.active {
-    display: flex;
+    display: flex; /* Show the active page, use flex for internal layout */
 }
 
-.page-header-area {
+
+/* --- Page Header --- */
+.page-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10mm;
-    margin-bottom: 10mm;
 }
-
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 .page-logo {
-    height: 12mm;
-    width: auto;
+    height: 10mm;
 }
-
-.page-title {
-    font-family: var(--font-main);
-    font-size: 1.2rem;
+.meta-block {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.large-mono {
+    font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--secondary-text-color);
 }
 
-#export-pdf-btn {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    background-color: var(--page-bg-color);
-    border: 1px solid var(--border-color);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-#export-pdf-btn:hover {
-    background-color: var(--primary-text-color);
-    color: var(--page-bg-color);
-    border-color: var(--primary-text-color);
-}
-
-
-.page-main-content {
+/* --- Page Content --- */
+.page-content {
     flex-grow: 1;
+    padding: 10mm 0;
+}
+.content-cover {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-cover h1 {
+    font-size: 3.5rem;
+}
+.content-cover h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+}
+#export-pdf-btn {
+    font-family: var(--font-main);
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 0.9rem;
 }
 
-.page-footer-area {
+/* --- Page Footer --- */
+.page-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--border-color);
     padding-top: 10mm;
-    margin-top: auto; /* Push footer to the bottom */
-    font-family: var(--font-main);
-    color: var(--secondary-text-color);
+    margin-top: auto; /* Push to bottom */
 }
-
-.page-nav-buttons button {
+.barcode {
+    background-color: var(--accent-color);
+    font-family: var(--font-mono);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #000;
+}
+.page-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.page-nav button {
     font-family: var(--font-main);
     background: none;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--text-color);
     padding: 0.5rem 1rem;
     cursor: pointer;
-    margin-left: 0.5rem;
 }
-.page-nav-buttons button:disabled {
-    opacity: 0.4;
+.page-nav button:disabled {
+    opacity: 0.3;
     cursor: not-allowed;
 }
-.page-nav-buttons button:hover:not(:disabled) {
-    background-color: var(--primary-text-color);
-    color: var(--page-bg-color);
+
+/* --- Typography & Elements --- */
+.mono {
+    font-family: var(--font-mono);
 }
-
-
-/* --- Typography & Content --- */
-h1, h2, h3 {
-    font-family: var(--font-main);
-    color: var(--primary-text-color);
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-h1 {
-    font-size: 3rem;
-    text-align: center;
-    border-bottom: none;
-    margin-top: 25%;
-}
-
-h2 {
+.numbered-header {
     font-size: 2rem;
+    font-weight: 700;
 }
-
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
 h3 {
-    font-size: 1.2rem;
-    border: none;
-    color: var(--secondary-text-color);
+    font-size: 1rem;
+    margin-top: 2rem;
 }
-
 p {
-    color: var(--secondary-text-color);
-    line-height: 1.6;
     font-size: 0.9rem;
+    line-height: 1.6;
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* --- Tables --- */
+/* --- Table Styles --- */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 2rem;
-    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
 }
-
 th, td {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
     text-align: left;
 }
-
 th {
     font-family: var(--font-main);
-    font-weight: 500;
-    background-color: #F8F8F8;
+    background-color: #f8f9fa; /* Light grey for header */
 }
 
 /* --- Specific Page Styles --- */
-#cover h1 {
-    color: var(--accent-color);
-}
-
-#toc-list {
+.toc-nav ul {
     list-style: none;
     padding-left: 0;
+    font-size: 1.2rem;
     line-height: 2.5;
 }
-
-#toc-list li a {
+.toc-nav a {
     text-decoration: none;
-    font-size: 1.2rem;
-    font-family: var(--font-main);
-    color: var(--secondary-text-color);
-    transition: color 0.2s;
+    color: var(--text-color);
 }
-#toc-list li a:hover {
-    color: var(--primary-text-color);
+.service-block {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-color);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.contact-grid span:first-child {
+    font-weight: 700;
 }
 
-.contact-details, .social-links {
-    margin-top: 2rem;
-    text-align: center;
-    line-height: 2;
+/* --- Decorative Elements --- */
+.dot-grid-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.25) 1px, transparent 0);
+    background-size: 15px 15px;
+}
+
+.page-content::before, .page-content::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--border-color);
+    border-style: solid;
+}
+
+.page-content::before {
+    top: 55mm;
+    left: 15mm;
+    border-width: 2px 0 0 2px;
+}
+
+.page-content::after {
+    bottom: 55mm;
+    right: 15mm;
+    border-width: 0 2px 2px 0;
 }
