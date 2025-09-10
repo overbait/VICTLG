@@ -1,0 +1,209 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #EAF2F8;
+    --page-bg-color: #FFFFFF;
+    --header-bg-color: #f8f9fa;
+    --primary-text-color: #1C2833;
+    --secondary-text-color: #34495E;
+    --footer-text-color: #808B96;
+    --border-color: #D6DBDF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --sans-serif-font: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--sans-serif-font);
+    background-color: var(--bg-color);
+    color: var(--secondary-text-color);
+    padding-top: 80px; /* Space for the fixed header */
+}
+
+/* --- Header --- */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--header-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+#logo {
+    height: 40px;
+    width: auto;
+}
+
+#export-pdf-btn {
+    padding: 0.5rem 1rem;
+    font-family: var(--sans-serif-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#export-pdf-btn:hover {
+    background-color: var(--primary-text-color);
+    color: var(--page-bg-color);
+    border-color: var(--primary-text-color);
+}
+
+
+/* --- Page Layout --- */
+.page {
+    background-color: var(--page-bg-color);
+    width: 210mm; /* A4 width */
+    min-height: 297mm; /* A4 height */
+    margin: 2rem auto;
+    box-shadow: 0 0 15px var(--shadow-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20mm;
+    box-sizing: border-box;
+}
+
+.page-content {
+    flex-grow: 1;
+}
+
+h1, h2 {
+    color: var(--primary-text-color);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: none;
+    margin-top: 40%; /* Push title down on cover page */
+}
+
+#cover p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+}
+
+/* --- Footer --- */
+.page-footer {
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--footer-text-color);
+    margin-top: 2rem;
+}
+
+/* --- Utility --- */
+/* Styles for tables, lists, etc. will be added as content is populated */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: #F2F3F4;
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+tr:nth-child(even) {
+    background-color: #F8F9F9;
+}
+
+.btn-datasheet {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-datasheet:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--page-bg-color);
+}
+
+.contact-details {
+    margin-top: 2rem;
+    line-height: 1.8;
+}
+
+.contact-details a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 1rem;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: var(--primary-text-color);
+}
+
+/* --- Table of Contents --- */
+#toc-list {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2.5;
+    margin-top: 3rem;
+}
+
+#toc-list li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    transition: color 0.2s ease-in-out;
+}
+
+#toc-list li a:hover {
+    color: var(--primary-text-color);
+}
