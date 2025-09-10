@@ -89,7 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Add Datasheet Buttons ---
+    function addDatasheetButtons() {
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const datasheetButton = document.createElement('div');
+            datasheetButton.classList.add('product-datasheet');
+            datasheetButton.innerHTML = `
+                <span>DATASHEET</span>
+                <img src="media/linkpic.png" alt="link icon">
+            `;
+            card.appendChild(datasheetButton);
+        });
+    }
+
     // --- Initialization ---
     setupEventListeners();
+    addDatasheetButtons();
     showPage(0); // Show the first page initially
 });
