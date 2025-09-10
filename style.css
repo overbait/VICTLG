@@ -56,7 +56,7 @@ body {
     flex-direction: column; /* Changed for new nav layout */
     gap: 1rem; /* Add space between header-top and nav */
     border-bottom: 6px solid #273638; /* Thicker border */
-    padding-bottom: 1rem; /* Reduced padding */
+    padding-bottom: 0.5rem; /* Reduced padding */
 }
 
 .header-container {
@@ -250,8 +250,6 @@ p {
     width: 180px; /* Increased width */
     flex-shrink: 0;
     background-color: #d0dce2; /* Placeholder color */
-    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.2) 1px, transparent 0);
-    background-size: 10px 10px;
 }
 
 .product-details {
@@ -339,10 +337,8 @@ p {
     justify-content: space-around;
     cursor: pointer;
     background-color: transparent;
-    background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 38px, #c4e3e8 38px, #c4e3e8 40px),
-        repeating-linear-gradient(-90deg, transparent, transparent 38px, #c4e3e8 38px, #c4e3e8 40px);
-    background-size: 80px 80px;
+    background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='4' height='4' fill='%23c4e3e8'/%3e%3c/svg%3e");
+    background-size: 10px 10px;
     font-family: var(--font-mono);
 }
 
