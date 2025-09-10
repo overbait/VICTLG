@@ -5,9 +5,10 @@ Inspired by game UIs and technical schematics.
 
 /* --- Variables & Fonts --- */
 :root {
-    --bg-color: #d6e6eb; /* Light Blue/Grey-Blue */
-    --page-bg-color: #FFFFFF;
-    --text-color: #212529; /* Dark Grey */
+    --bg-color: #c8d8e0; /* Slightly darker grey-blue for the body background */
+    --page-bg-color: #d6e6eb; /* Soft, light grayish-blue for the page */
+    --text-color: #333333; /* Softer dark grey for text */
+    --accent-bg-color: #b0c4de; /* Darker blue for accents */
     --accent-color: #ffef00; /* Neon Yellow */
     --border-color: #ced4da; /* Light Grey */
     --font-main: 'Orbitron', sans-serif;
@@ -162,21 +163,62 @@ p {
     line-height: 1.6;
 }
 
-/* --- Table Styles --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* --- Product Grid & Card Styles --- */
+.product-grid {
+    display: grid;
+    gap: 1.5rem;
     margin-top: 1.5rem;
-    font-size: 0.8rem;
 }
-th, td {
-    border: 1px solid var(--border-color);
-    padding: 0.75rem;
-    text-align: left;
+
+.product-card {
+    display: flex;
+    background-color: #e9f1f4; /* A slightly lighter shade for the card itself */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-th {
+
+.product-image-placeholder {
+    width: 150px;
+    flex-shrink: 0;
+    background-color: #d0dce2; /* Placeholder color */
+}
+
+.product-details {
+    padding: 1rem 1.5rem;
+    flex-grow: 1;
+    /* The vertical stripes effect from the design */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        var(--accent-bg-color) 10px,
+        var(--accent-bg-color) 11px
+    );
+    background-size: 100%;
+}
+
+.product-details h4 {
+    margin: 0 0 1rem 0;
     font-family: var(--font-main);
-    background-color: #f8f9fa; /* Light grey for header */
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.spec {
+    display: flex;
+    align-items: baseline; /* Align text nicely */
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 0.5rem;
+}
+
+.spec-label {
+    font-weight: 500;
+    color: #111; /* Darker color for better contrast */
+    width: 140px; /* Give it a fixed width to align values */
+    flex-shrink: 0; /* Prevent it from shrinking */
 }
 
 /* --- Specific Page Styles --- */
@@ -230,4 +272,20 @@ th {
     bottom: 55mm;
     right: 15mm;
     border-width: 0 2px 2px 0;
+}
+
+/* --- Product Navigation --- */
+.product-nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.product-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
 }
