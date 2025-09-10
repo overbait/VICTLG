@@ -4,87 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VI Systems - Product Catalog 2025</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav id="top-nav">
-        <div id="nav-links">
-            <!-- Links will be dynamically generated or hardcoded here -->
-            <a href="#cover" class="nav-link">Cover</a>
-            <a href="#toc" class="nav-link">Contents</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#products" class="nav-link">Products</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <button id="export-pdf-btn">Export to PDF</button>
-    </nav>
-
     <main id="catalog-container">
         <!-- Page 1: Cover -->
         <section id="cover" class="page active">
-            <div class="page-content">
+            <div class="page-header-area">
                 <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
-                <h1>Product Catalog 2025</h1>
+                <div class="page-title">PRODUCT CATALOG 2025</div>
+                <button id="export-pdf-btn">Export to PDF</button>
+            </div>
+            <div class="page-main-content">
+                <h1>VI Systems GmbH</h1>
                 <p>Fiber Optics Components and Services</p>
+            </div>
+            <div class="page-footer-area">
+                <div class="page-number">1 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn" disabled>&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
             </div>
         </section>
 
         <!-- Page 2: Welcome -->
         <section id="welcome" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">INTRODUCTION</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Welcome to VI Systems</h2>
                 <p>VI Systems (VIS) develops and manufactures cutting-edge optoelectronic components for communication, consumer, and automotive applications. Located in the heart of Berlin, we are a fabless company specializing in ultra-fast solutions for optical interconnects and sensors.</p>
                 <p>Our portfolio includes Vertical Cavity Surface-Emitting Lasers (VCSELs) and PIN photodiodes delivering speeds up to 224 Gbps per channel, alongside driver and amplifier ICs operating up to 56 Gbps. Our latest generation components enable energy-efficient 400 Gbps PAM-4 transmission using Short Wave Division Multiplexing (SWDM).</p>
                 <p>By partnering with leading global foundries, we deliver a unique combination of high speed, low power consumption, and reliability at a competitive cost, helping equipment manufacturers meet the ever-growing performance demands of the future.</p>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">2 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
+            </div>
         </section>
 
         <!-- Page 3: Table of Contents -->
         <section id="toc" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">TABLE OF CONTENTS</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Table of Contents</h2>
                 <nav>
                     <ul id="toc-list">
-                        <li><a href="#welcome">Welcome to VI Systems</a></li>
-                        <li><a href="#services">Technology & Services</a></li>
-                        <li><a href="#transmitters">VCSEL Transmitter Modules</a></li>
-                        <li><a href="#receivers">Optical Receivers & Photodetectors</a></li>
-                        <li><a href="#ics">Integrated Circuits (ICs)</a></li>
-                        <li><a href="#chips">VCSEL & Photodiode Chips</a></li>
-                        <li><a href="#contact">Contact Information</a></li>
+                        <li><a href="#welcome">02 - Welcome to VI Systems</a></li>
+                        <li><a href="#services">04 - Technology & Services</a></li>
+                        <li><a href="#transmitters">05 - VCSEL Transmitter Modules</a></li>
+                        <li><a href="#receivers">06 - Optical Receivers & Photodetectors</a></li>
+                        <li><a href="#ics">07 - Integrated Circuits (ICs)</a></li>
+                        <li><a href="#chips">08 - VCSEL & Photodiode Chips</a></li>
+                        <li><a href="#contact">09 - Contact Information</a></li>
                     </ul>
                 </nav>
+            </div>
+            <div class="page-footer-area">
+                <div class="page-number">3 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
             </div>
         </section>
 
         <!-- Page 4: Services -->
         <section id="services" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">TECHNOLOGY & SERVICES</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Technology & Services</h2>
-
                 <h3>Integrated Optical Solutions</h3>
                 <p>We pair state-of-the-art SiGe BiCMOS integrated circuits with our ultrahigh-speed VCSEL and PIN components to deliver outstanding performance in compact, reliable optical engines.</p>
-
                 <h3>Wafer Mapping Services</h3>
                 <p>Our semi-automatic prober station performs comprehensive electrical and optical testing on 2" to 8" wafers at temperatures up to 150°C, ensuring quality and improving yield before packaging.</p>
-
                 <h3>High-Frequency Test & Characterization</h3>
                 <p>Our lab is equipped to measure electro-optical performance with data modulation analysis and eye-diagram measurements of up to 128 Gbit/s.</p>
-
-                <h3>Optical and Mechanical Inspection</h3>
-                <p>We utilize high-magnification microscopy and thickness analysis tools to ensure all component properties meet our exacting standards.</p>
-
-                <h3>Modeling and Simulation</h3>
-                <p>We leverage advanced FEA, CFD, and optical simulation tools to model thermal distribution and optical modes, ensuring robust and reliable component design from the ground up.</p>
+            </div>
+            <div class="page-footer-area">
+                <div class="page-number">4 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
             </div>
         </section>
 
         <!-- Page 5: VCSEL Transmitters -->
         <section id="transmitters" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">VCSEL TRANSMITTER MODULES</div>
+            </div>
+            <div class="page-main-content">
                 <h2>VCSEL Transmitter Modules</h2>
                 <table>
                     <thead>
@@ -165,11 +189,22 @@
                     </tbody>
                 </table>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">5 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
+            </div>
         </section>
 
         <!-- Page 6: Receivers & Photodetectors -->
         <section id="receivers" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">OPTICAL RECEIVERS</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Optical Receivers & Photodetectors</h2>
                 <table>
                     <thead>
@@ -202,13 +237,23 @@
                     </tbody>
                 </table>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">6 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
+            </div>
         </section>
 
         <!-- Page 7: Integrated Circuits -->
         <section id="ics" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">INTEGRATED CIRCUITS (ICS)</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Integrated Circuits (ICs)</h2>
-
                 <h3>High Speed VCSEL Drivers</h3>
                 <table>
                     <thead>
@@ -244,8 +289,7 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <h3 style="margin-top: 3rem;">High Speed Transimpedance Amplifiers (TIA)</h3>
+                <h3 style="margin-top: 2rem;">High Speed Transimpedance Amplifiers (TIA)</h3>
                 <table>
                     <thead>
                         <tr>
@@ -281,11 +325,22 @@
                     </tbody>
                 </table>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">7 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
+            </div>
         </section>
 
         <!-- Page 8: Component Chips -->
         <section id="chips" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">VCSEL & PHOTODIODE CHIPS</div>
+            </div>
+            <div class="page-main-content">
                 <h2>VCSEL & Photodiode Chips</h2>
                 <h3>High Speed VCSEL Chips</h3>
                 <table>
@@ -329,8 +384,7 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <h3 style="margin-top: 3rem;">Broad Range Photodetector PIN Diode</h3>
+                <h3 style="margin-top: 2rem;">Broad Range Photodetector PIN Diode</h3>
                 <table>
                     <thead>
                         <tr>
@@ -352,43 +406,43 @@
                     </tbody>
                 </table>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">8 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn">NEXT &gt;</button>
+                </div>
+            </div>
         </section>
 
         <!-- Page 9: Contact -->
         <section id="contact" class="page">
-            <div class="page-content">
+            <div class="page-header-area">
+                <img src="media/Vislogomain.png" alt="VI Systems Logo" class="page-logo">
+                <div class="page-title">CONTACT INFORMATION</div>
+            </div>
+            <div class="page-main-content">
                 <h2>Contact Information</h2>
                 <p>For additional information or to receive a quotation, please contact our sales department.</p>
-
                 <div class="contact-details">
-                    <p><strong>VI Systems GmbH</strong></p>
-                    <p>Hardenbergstrasse 7</p>
-                    <p>10623 Berlin, Germany</p>
-                    <br>
-                    <p><strong>Tel:</strong> +49 30 3083143 30</p>
-                    <p><strong>Fax:</strong> +49 30 3083143 59</p>
-                    <p><strong>Email:</strong> <a href="mailto:sales@v-i-systems.com">sales@v-i-systems.com</a></p>
-                    <p><strong>Web:</strong> <a href="http://www.v-i-systems.com" target="_blank">www.v-i-systems.com</a></p>
+                    <p><strong>VI Systems GmbH</strong>, Hardenbergstrasse 7, 10623 Berlin, Germany</p>
+                    <p><strong>Tel:</strong> +49 30 3083143 30 | <strong>Email:</strong> <a href="mailto:sales@v-i-systems.com">sales@v-i-systems.com</a></p>
                 </div>
-
                 <div class="social-links">
+                    <a href="http://www.v-i-systems.com" target="_blank">www.v-i-systems.com</a> |
                     <a href="https://twitter.com/visGmbH" target="_blank">Twitter</a> |
                     <a href="https://www.linkedin.com/company/vi-systems-gmbh" target="_blank">LinkedIn</a>
                 </div>
             </div>
+            <div class="page-footer-area">
+                <div class="page-number">9 / 9</div>
+                <div class="page-nav-buttons">
+                    <button class="prev-btn">&lt; PREV</button>
+                    <button class="next-btn" disabled>NEXT &gt;</button>
+                </div>
+            </div>
         </section>
     </main>
-
-    <footer id="page-footer-nav">
-        <button id="prev-page-btn">&lt;&lt;</button>
-        <div id="pagination-container">
-            <!-- Page numbers will be injected here by JS -->
-        </div>
-        <button id="next-page-btn">&gt;&gt;</button>
-        <div id="page-counter">
-            <span id="current-page-num">01</span> / <span id="total-page-num">09</span>
-        </div>
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
