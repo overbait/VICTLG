@@ -361,8 +361,7 @@ Cover Page Specific Styles
 #cover.page {
     padding-top: 0;
     padding-bottom: 0;
-    position: relative;
-    overflow: hidden; /* Contain pseudo-elements */
+    position: relative; /* Needed for pseudo-element positioning */
 }
 
 #cover.page::before {
@@ -370,7 +369,7 @@ Cover Page Specific Styles
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 95px; /* Stop background above the footer */
+    height: calc(100% - 105px); /* Set height to full page minus footer */
     width: 35%; /* Width of the yellow area */
     background-color: var(--accent-color);
     z-index: 0;
@@ -394,7 +393,7 @@ Cover Page Specific Styles
 .cover-header .header-top {
     border-bottom: 6px solid #273638;
     padding-bottom: 0.5rem;
-    width: 55%; /* Set a fixed width that is not tied to column layout */
+    width: 55%; /* Lengthened separator */
 }
 
 .cover-header .header-left {
@@ -420,7 +419,6 @@ Cover Page Specific Styles
     padding: 0; /* Remove padding to allow full-width background */
     flex-grow: 1; /* Make it take the remaining space */
     position: relative; /* New positioning context */
-    z-index: 1; /* Ensure content is above the pseudo-element */
 }
 
 .cover-left {
@@ -429,7 +427,7 @@ Cover Page Specific Styles
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Move content up */
-    padding-top: 8rem; /* Add space from the top */
+    padding-top: 8rem; /* Pushed title down */
     position: relative; /* For positioning decorative elements */
 }
 
@@ -438,9 +436,11 @@ Cover Page Specific Styles
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: transparent; /* Background is now on ::before pseudo-element */
+    background-color: transparent; /* Show pseudo-element behind */
     padding: 2rem 1rem; /* Adjust padding for narrower column */
     justify-content: center; /* Center content vertically */
+    position: relative;
+    z-index: 1;
 }
 
 .cover-title {
@@ -504,7 +504,7 @@ Cover Page Specific Styles
     position: absolute;
     width: 40px;
     height: 300px; /* Increased height */
-    left: 63%; /* Moved slightly to the left */
+    left: 65%; /* Adjusted position */
     transform: translateX(-50%); /* Center on the dividing line */
     background-color: transparent;
     background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='4' height='4' fill='%23a8b8c0'/%3e%3c/svg%3e"); /* Darker dots */
