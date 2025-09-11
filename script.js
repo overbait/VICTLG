@@ -60,8 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Dynamic Footer Height for Cover Page Styling ---
+    function setCoverFooterHeight() {
+        const coverFooter = document.querySelector('#cover .cover-footer');
+        if (coverFooter) {
+            const footerHeight = coverFooter.offsetHeight;
+            document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
+        }
+    }
+
     // --- Initialization ---
     setupEventListeners();
     addDatasheetButtons();
+    setCoverFooterHeight(); // Set initial height
     showPage(0); // Show the first page initially
+
+    // Recalculate after all resources (like fonts) are loaded and on resize
+    window.addEventListener('load', setCoverFooterHeight);
+    window.addEventListener('resize', setCoverFooterHeight);
 });
