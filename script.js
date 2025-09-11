@@ -44,49 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // PDF Export Button
-        const exportBtn = document.getElementById('export-pdf-btn');
-        if (exportBtn) {
-            exportBtn.addEventListener('click', generatePdf);
-        }
-    }
-
-    // --- PDF Generation Logic ---
-    function generatePdf() {
-        const btn = document.getElementById('export-pdf-btn');
-        const originalText = btn.textContent;
-        btn.textContent = 'GENERATING...';
-        btn.disabled = true;
-
-        const element = document.getElementById('catalog-container');
-
-        const options = {
-            margin: 0,
-            filename: 'VIS-Product-Catalog-2025-TechnoDoc.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: {
-                scale: 2,
-                useCORS: true,
-                logging: false,
-                backgroundColor: null
-            },
-            jsPDF: {
-                unit: 'mm',
-                format: 'a4',
-                orientation: 'portrait'
-            },
-            pagebreak: { mode: 'css', before: '.page' },
-            enableLinks: true
-        };
-
-        html2pdf().set(options).from(element).save().then(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }).catch((err) => {
-            console.error("Error generating PDF:", err);
-            btn.textContent = originalText;
-            btn.disabled = false;
-        });
     }
 
     // --- Add Datasheet Buttons ---

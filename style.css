@@ -131,6 +131,15 @@ body {
     font-weight: 400;
     border: none;
 }
+#export-pdf-btn {
+    font-family: var(--font-main);
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
 
 /* --- Page Footer --- */
 .page-footer {
@@ -529,39 +538,4 @@ Cover Page Specific Styles
 
 .cover-footer .page-nav {
     gap: 0.5rem; /* Reduce space between page number and button */
-}
-
-/* --- Export Button --- */
-#export-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#export-pdf-btn {
-    padding: 10px 20px;
-    background-color: #273638;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Exo 2', sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
-}
-
-#export-pdf-btn:hover {
-    background-color: #4a6266;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-#export-pdf-btn:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
