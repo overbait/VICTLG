@@ -379,9 +379,14 @@ Cover Page Specific Styles
 }
 
 .cover-header .header-top {
-    border-bottom: 6px solid #273638; /* Apply border here */
+    border-bottom: 6px solid #273638;
     padding-bottom: 0.5rem;
-    width: 100%; /* Make it full width of its container */
+    width: 50%; /* Set a fixed width that is not tied to column layout */
+}
+
+.cover-header .header-left {
+    border-bottom: none; /* Remove this rule */
+    padding-bottom: 0;
 }
 
 /* --- Cover Content --- */
@@ -401,10 +406,11 @@ Cover Page Specific Styles
     align-items: stretch; /* Stretch columns to full height */
     padding: 0; /* Remove padding to allow full-width background */
     flex-grow: 1; /* Make it take the remaining space */
+    position: relative; /* New positioning context */
 }
 
 .cover-left {
-    flex-basis: 65%;
+    flex-basis: 60%;
     padding: 2rem 15mm;
     display: flex;
     flex-direction: column;
@@ -414,7 +420,7 @@ Cover Page Specific Styles
 }
 
 .cover-right {
-    flex-basis: 35%;
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -459,7 +465,7 @@ Cover Page Specific Styles
     padding: 0;
     color: #333;
     align-self: stretch;
-    max-width: 180px; /* Increase width for the wider column */
+    max-width: 200px; /* Adjust for the 40% column */
 }
 
 .info-box p {
@@ -485,9 +491,10 @@ Cover Page Specific Styles
 /* --- Cover Decorative Elements --- */
 .decorative-element {
     position: absolute;
-    width: 40px; /* Make wider */
-    height: 220px; /* Make taller */
-    right: -20px; /* Position half of new width outside the column */
+    width: 40px;
+    height: 220px;
+    left: 60%; /* Position at the start of the right column */
+    transform: translateX(-50%); /* Center on the dividing line */
     background-color: transparent;
     background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='4' height='4' fill='%23c4e3e8'/%3e%3c/svg%3e");
     background-size: 8px 8px;
