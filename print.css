@@ -53,3 +53,14 @@ body {
     display: flex !important; /* Override the default 'none' */
     opacity: 1 !important;
 }
+
+/* --- Ensure Navigation Buttons Retain Styles in PDF --- */
+.page-nav .prev-btn,
+.page-nav .next-btn {
+    -webkit-print-color-adjust: exact !important; /* Force color printing in Chrome/Safari */
+    print-color-adjust: exact !important; /* Standard property */
+    border: 1px solid #333333 !important; /* Use explicit color */
+    color: #333333 !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+}
