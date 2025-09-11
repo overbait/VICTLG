@@ -516,7 +516,7 @@ Cover Page Specific Styles
 }
 
 .decorative-element.bottom {
-    bottom: -5px;
+    bottom: -8px;
 }
 
 
