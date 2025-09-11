@@ -46,7 +46,6 @@ body {
 }
 
 /* Hide elements that should not be in the PDF */
-.page-nav button,
 .product-datasheet {
     display: none !important;
 }
