@@ -369,7 +369,7 @@ Cover Page Specific Styles
     position: absolute;
     top: 0;
     right: 0;
-    height: calc(100% - var(--footer-height, 116.5px)); /* Set height to full page minus footer */
+    height: calc(100% - 116.5px); /* Set height to full page minus footer */
     width: 35%; /* Width of the yellow area */
     background-color: var(--accent-color);
     z-index: 0;
@@ -516,7 +516,7 @@ Cover Page Specific Styles
 }
 
 .decorative-element.bottom {
-    bottom: -5px;
+    bottom: -8px;
 }
 
 
