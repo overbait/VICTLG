@@ -12,42 +12,27 @@ const path = require('path');
     const page = await browser.newPage();
 
     try {
-        // Read HTML and CSS files
-        console.log('Reading HTML and CSS files...');
-        let html = await fs.readFile('index.html', 'utf-8');
-        const css = await fs.readFile('style.css', 'utf-8');
-
-        // Inline the CSS
-        console.log('Inlining CSS...');
-        html = html.replace('<link rel="stylesheet" href="style.css">', `<style>${css}</style>`);
-
-        // By setting the content directly, we avoid navigation issues.
-        // We must provide a base URL so that relative image paths like 'media/...' work correctly.
-        await page.setContent(html, {
-            waitUntil: 'networkidle0'
+        // Go to the local HTML file
+        const filePath = path.resolve(__dirname, 'index.html');
+        console.log(`Navigating to: file://${filePath}`);
+        await page.goto(`file://${filePath}`, {
+            waitUntil: 'networkidle0', // Wait for all network connections to be idle
+            timeout: 60000 // 60-second timeout
         });
 
-        // Prepare the page for printing: display all sections
-        console.log('Preparing all pages for printing...');
-        await page.evaluate(() => {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(p => {
-                p.style.display = 'flex'; // Use 'flex' as per the active page style
-                p.classList.remove('active'); // Ensure no 'active' class is present
-            });
-            // Also remove the export button if it exists, to not include it in the PDF
-            const exportContainer = document.getElementById('export-container');
-            if (exportContainer) {
-                exportContainer.remove();
-            }
-        });
+        // Emulate print media type to apply print.css
+        console.log('Emulating print media type...');
+        await page.emulateMediaType('print');
+
+        // The logic to show all pages is now in print.css,
+        // so we don't need the page.evaluate block to change styles.
 
         // Generate the PDF
         console.log('Generating PDF...');
         await page.pdf({
             path: 'VIS-Product-Catalog-2025.pdf',
             format: 'A4',
-            printBackground: true,
+            printBackground: true, // Important for backgrounds and colors
             margin: {
                 top: 0,
                 right: 0,

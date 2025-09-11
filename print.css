@@ -1,0 +1,58 @@
+/* --- Print-specific Styles for PDF Export --- */
+
+/* Set the page size and remove default margins */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* Reset body for printing */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important; /* White background is better for PDF */
+}
+
+/* General page setup for printing */
+.page {
+    box-shadow: none !important; /* Remove the shadow */
+    margin: 0 auto !important;   /* Center page content, remove any external margin */
+    width: 210mm !important;      /* Explicitly set A4 width */
+    height: 297mm !important;     /* Explicitly set A4 height */
+
+    /* Use flexbox to ensure footer is at the bottom */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+    /* Ensure each .page section starts on a new PDF page */
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+}
+
+/* Avoid a blank page at the end of the document */
+.page:last-of-type {
+    page-break-after: avoid !important;
+}
+
+/* Ensure headers and footers are not affected by page breaks */
+.page-header, .page-footer {
+    flex-shrink: 0;
+}
+
+.page-content {
+    flex-grow: 1;
+    height: auto;
+}
+
+/* Hide elements that should not be in the PDF */
+.page-nav button,
+.product-datasheet {
+    display: none !important;
+}
+
+/* Ensure all pages are visible for printing */
+#catalog-container .page {
+    display: flex !important; /* Override the default 'none' */
+    opacity: 1 !important;
+}
