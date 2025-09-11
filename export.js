@@ -24,8 +24,41 @@ const path = require('path');
         console.log('Emulating print media type...');
         await page.emulateMediaType('print');
 
-        // The logic to show all pages is now in print.css,
-        // so we don't need the page.evaluate block to change styles.
+        // --- Convert navigation buttons to PDF links ---
+        console.log('Converting navigation buttons to PDF links...');
+        await page.evaluate(() => {
+            const pages = Array.from(document.querySelectorAll('.page'));
+            pages.forEach((currentPage, index) => {
+                // Handle Next Button
+                const nextBtn = currentPage.querySelector('.next-btn');
+                if (nextBtn && index < pages.length - 1) {
+                    const nextPageId = pages[index + 1].id;
+                    if (nextPageId) {
+                        const link = document.createElement('a');
+                        link.href = `#${nextPageId}`;
+                        link.className = nextBtn.className;
+                        link.innerHTML = nextBtn.innerHTML;
+                        // Copy over inline styles if any, for visual consistency
+                        link.style.cssText = nextBtn.style.cssText;
+                        nextBtn.parentNode.replaceChild(link, nextBtn);
+                    }
+                }
+
+                // Handle Prev Button
+                const prevBtn = currentPage.querySelector('.prev-btn');
+                if (prevBtn && index > 0) {
+                    const prevPageId = pages[index - 1].id;
+                    if (prevPageId) {
+                        const link = document.createElement('a');
+                        link.href = `#${prevPageId}`;
+                        link.className = prevBtn.className;
+                        link.innerHTML = prevBtn.innerHTML;
+                        link.style.cssText = prevBtn.style.cssText;
+                        prevBtn.parentNode.replaceChild(link, prevBtn);
+                    }
+                }
+            });
+        });
 
         // Generate the PDF
         console.log('Generating PDF...');

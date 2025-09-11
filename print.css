@@ -46,9 +46,7 @@ body {
 }
 
 /* Hide elements that should not be in the PDF */
-.product-datasheet {
-    display: none !important;
-}
+/* .product-datasheet was previously hidden here, rule removed based on user feedback */
 
 /* Ensure all pages are visible for printing */
 #catalog-container .page {
