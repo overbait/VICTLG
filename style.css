@@ -178,12 +178,16 @@ body {
     align-items: center;
     gap: 1rem;
 }
-.page-nav button {
+.page-nav .next-btn,
+.page-nav .prev-btn {
+    display: inline-block;
     font-family: var(--font-main);
     background: none;
     border: 1px solid var(--text-color);
     padding: 0.5rem 1rem;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
 }
 .page-nav button:disabled {
     opacity: 0.3;
