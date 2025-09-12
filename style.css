@@ -47,6 +47,7 @@ body {
 
 .page.active {
     display: flex; /* Show the active page, use flex for internal layout */
+    justify-content: space-between;
 }
 
 
@@ -116,7 +117,6 @@ body {
 
 /* --- Page Content --- */
 .page-content {
-    flex-grow: 1;
     padding: 10mm 15mm;
     min-height: 0; /* Prevents flexbox overflow issues */
     /* overflow-y: auto; REMOVED as per user request */
@@ -138,7 +138,7 @@ body {
     right: 0;
     width: 35%;
     background-color: var(--accent-color);
-    z-index: 1;
+    z-index: 0;
 }
 .content-cover h1 {
     font-size: 3.5rem;
@@ -165,7 +165,6 @@ body {
     align-items: flex-end;
     border-top: 1px solid var(--border-color);
     padding: 10mm 15mm 0;
-    margin-top: auto; /* Push to bottom */
     flex-shrink: 0;
 }
 
@@ -392,6 +391,7 @@ p {
     white-space: nowrap;
     margin: 0;
     padding: 0;
+    margin-bottom: 1rem;
 }
 
 .product-datasheet img {
@@ -481,7 +481,7 @@ p {
     padding-top: 8rem; /* Pushed title down */
     position: relative; /* For positioning decorative elements */
     background-color: var(--page-bg-color);
-    z-index: 2;
+    z-index: 1;
 }
 
 .cover-right {
@@ -493,7 +493,7 @@ p {
     padding: 2rem 1rem; /* Adjust padding for narrower column */
     justify-content: center; /* Center content vertically */
     position: relative;
-    z-index: 2; /* Ensure content is above yellow pseudo-element */
+    z-index: 1; /* Ensure content is above yellow pseudo-element */
 }
 
 .cover-title {
@@ -560,8 +560,9 @@ p {
     left: 60%; /* Adjusted for better centering, moved slightly more left */
     transform: translateX(-50%); /* Center on the dividing line */
     background-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='5' height='5' fill='%23a8b8c0'/%3e%3c/svg%3e");
-    background-size: 10px 10px;
+    background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='10' height='10' fill='%23a8b8c0'/%3e%3c/svg%3e");
+    background-size: 20px 20px;
+    z-index: 2;
 }
 
 .decorative-element.top {
