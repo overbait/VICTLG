@@ -246,8 +246,8 @@ p {
 }
 
 .product-card + .product-card {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
     border-top: 1px solid #aed9e0;
 }
 
@@ -259,7 +259,7 @@ p {
 
 .product-details {
     background-color: #c4e3e8; /* Added background color */
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
     flex-grow: 1;
 }
 
@@ -274,9 +274,9 @@ p {
     display: flex;
     align-items: baseline; /* Align text nicely */
     font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     border-bottom: 1px solid rgba(0,0,0,0.05); /* Thin border */
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.2rem;
 }
 
 .spec-label {
@@ -368,16 +368,6 @@ Cover Page Specific Styles
     position: relative; /* Needed for pseudo-element positioning */
 }
 
-#cover.page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: calc(100% - 116.5px); /* Set height to full page minus footer */
-    width: 35%; /* Width of the yellow area */
-    background-color: var(--accent-color);
-    z-index: 0;
-}
 
 #cover .header-container {
     padding-top: 10mm;
@@ -440,11 +430,10 @@ Cover Page Specific Styles
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: transparent; /* Show pseudo-element behind */
+    background-color: var(--accent-color);
     padding: 2rem 1rem; /* Adjust padding for narrower column */
     justify-content: center; /* Center content vertically */
     position: relative;
-    z-index: 1;
 }
 
 .cover-title {
