@@ -57,6 +57,7 @@ body {
     gap: 1rem; /* Add space between header-top and nav */
     border-bottom: 6px solid #273638; /* Thicker border */
     padding-bottom: 0.5rem; /* Reduced padding */
+    flex-shrink: 0;
 }
 
 .header-container {
@@ -126,6 +127,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.content-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    background-color: var(--accent-color);
+    z-index: 1;
 }
 .content-cover h1 {
     font-size: 3.5rem;
@@ -153,6 +166,7 @@ body {
     border-top: 1px solid var(--border-color);
     padding: 10mm 15mm 0;
     margin-top: auto; /* Push to bottom */
+    flex-shrink: 0;
 }
 
 .footer-left {
@@ -267,7 +281,7 @@ p {
 
 .product-details {
     background-color: #c4e3e8; /* Added background color */
-    padding: 0 0.5rem; /* Reduced horizontal padding */
+    padding: 0.5rem; /* Reduced horizontal padding */
     flex-grow: 1;
     display: flex;
     flex-direction: column; /* Ensure vertical stacking for details */
@@ -360,14 +374,14 @@ p {
     writing-mode: vertical-rl; /* Vertical writing mode */
     text-orientation: mixed; /* Mixed orientation for vertical text */
     padding: 0.2rem 0.2rem; /* Minimal padding for datasheet area */
-    width: 4rem; /* Give more space for icon */
+    width: 2.5rem; /* Give more space for icon */
     display: flex;
     align-items: center;
     justify-content: center; /* Center content vertically initially */
     cursor: pointer;
     background-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg width='8' height='8' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='4' height='4' fill='%23c4e3e8'/%3e%3c/svg%3e");
-    background-size: 8px 8px; /* Revert to original size */
+    background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='5' height='5' fill='%23c4e3e8'/%3e%3c/svg%3e");
+    background-size: 10px 10px; /* Revert to original size */
     font-family: var(--font-mono);
     position: relative; /* For absolute positioning of children */
 }
@@ -397,17 +411,6 @@ p {
     position: relative; /* Needed for pseudo-element positioning */
 }
 
-#cover.page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0; /* Extends to bottom */
-    height: 100%; /* Explicitly set height to 100% */
-    width: 35%; /* Width of the yellow area */
-    background-color: var(--accent-color);
-    z-index: 1; /* Background layer */
-}
 
 #cover .header-container {
     padding-top: 10mm; /* Added top padding */
@@ -425,7 +428,6 @@ p {
     flex-grow: 1;
     position: relative;
     z-index: 2; /* Ensure main content is above yellow background */
-    background-color: var(--page-bg-color); /* Ensure main content has a background */
 }
 
 #cover.page .cover-footer {
@@ -478,6 +480,8 @@ p {
     justify-content: flex-start; /* Move content up */
     padding-top: 8rem; /* Pushed title down */
     position: relative; /* For positioning decorative elements */
+    background-color: var(--page-bg-color);
+    z-index: 2;
 }
 
 .cover-right {
@@ -489,7 +493,7 @@ p {
     padding: 2rem 1rem; /* Adjust padding for narrower column */
     justify-content: center; /* Center content vertically */
     position: relative;
-    z-index: 1; /* Ensure content is above yellow pseudo-element */
+    z-index: 2; /* Ensure content is above yellow pseudo-element */
 }
 
 .cover-title {
@@ -556,8 +560,8 @@ p {
     left: 60%; /* Adjusted for better centering, moved slightly more left */
     transform: translateX(-50%); /* Center on the dividing line */
     background-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg width='8' height='8' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='4' height='4' fill='%23a8b8c0'/%3e%3c/svg%3e"); /* Darker dots, revert to original size */
-    background-size: 8px 8px; /* Revert to original size */
+    background-image: url("data:image/svg+xml,%3csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='5' height='5' fill='%23a8b8c0'/%3e%3c/svg%3e");
+    background-size: 10px 10px;
 }
 
 .decorative-element.top {
