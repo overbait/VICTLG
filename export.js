@@ -4,12 +4,14 @@ const path = require('path');
 
 (async () => {
     console.log('Starting PDF generation...');
-
+    console.log('Launching browser...');
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
+    console.log('Browser launched. Creating new page...');
     const page = await browser.newPage();
+    console.log('Page created.');
 
     try {
         // Go to the local HTML file
@@ -19,6 +21,7 @@ const path = require('path');
             waitUntil: 'networkidle0', // Wait for all network connections to be idle
             timeout: 60000 // 60-second timeout
         });
+        console.log('Page loaded successfully.');
 
         // Emulate print media type to apply print.css
         console.log('Emulating print media type...');
@@ -59,6 +62,7 @@ const path = require('path');
                 }
             });
         });
+        console.log('Navigation buttons converted.');
 
         // Generate the PDF
         console.log('Generating PDF...');
