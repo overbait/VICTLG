@@ -52,9 +52,10 @@ function addDatasheetButtons() {
     const url = card.getAttribute('data-datasheet');
     const btn = document.createElement('div');
     btn.classList.add('product-datasheet');
+    const content = `<span>DATASHEET</span><img src="media/linkpic.png" alt="link icon">`;
     btn.innerHTML = url
-      ? `<a href="${url}" target="_blank" rel="noopener"><span>DATASHEET</span></a>`
-      : `<span>DATASHEET</span>`;
+      ? `<a href="${url}" target="_blank" rel="noopener">${content}</a>`
+      : content;
     card.appendChild(btn);
   });
 }
