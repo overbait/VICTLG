@@ -543,3 +543,44 @@ Cover Page Specific Styles
 .cover-footer .page-nav {
     gap: 0.5rem; /* Reduce space between page number and button */
 }
+
+/* --- Compact cards & subgroup helpers --- */
+.product-card.compact .product-image-placeholder {
+  width: 110px;
+}
+.product-card.compact .product-details {
+  padding: 0.5rem 0.75rem;
+}
+.product-card.compact .product-details h4 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+.product-card.compact .spec {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.product-subgroup-title {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  margin: 0.25rem 0 0.5rem;
+  opacity: .85;
+}
+.product-subgroup {
+  margin-bottom: 0.75rem;
+  border-left: 2px solid var(--accent-color);
+  padding-left: 0.75rem;
+}
+
+.product-grid.grid-tight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 0.75rem;
+}
+
+/* Make the DATASHEET area a link when a URL is present */
+.product-datasheet a {
+  color: inherit;
+  text-decoration: none;
+}
