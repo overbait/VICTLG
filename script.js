@@ -46,19 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // --- Add Datasheet Buttons ---
-    function addDatasheetButtons() {
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            const datasheetButton = document.createElement('div');
-            datasheetButton.classList.add('product-datasheet');
-            datasheetButton.innerHTML = `
-                <span>DATASHEET</span>
-                <img src="media/linkpic.png" alt="link icon">
-            `;
-            card.appendChild(datasheetButton);
-        });
-    }
+function addDatasheetButtons() {
+  const productCards = document.querySelectorAll('.product-card');
+  productCards.forEach(card => {
+    const url = card.getAttribute('data-datasheet');
+    const btn = document.createElement('div');
+    btn.classList.add('product-datasheet');
+    const content = `<span>DATASHEET</span><img src="media/linkpic.png" alt="link icon">`;
+    btn.innerHTML = url
+      ? `<a href="${url}" target="_blank" rel="noopener">${content}</a>`
+      : content;
+    card.appendChild(btn);
+  });
+}
 
     // --- Initialization ---
     setupEventListeners();

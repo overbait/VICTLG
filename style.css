@@ -246,37 +246,37 @@ p {
 }
 
 .product-card + .product-card {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 2px solid #aed9e0;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #aed9e0;
 }
 
 .product-image-placeholder {
-    width: 180px; /* Increased width */
+    width: 150px;
     flex-shrink: 0;
     background-color: #d0dce2; /* Placeholder color */
 }
 
 .product-details {
     background-color: #c4e3e8; /* Added background color */
-    padding: 0.75rem 1rem; /* Reduced padding */
+    padding: 0.5rem 1rem;
     flex-grow: 1;
 }
 
 .product-details h4 {
-    margin: 0 0 0.75rem 0; /* Reduced margin */
+    margin: 0 0 0.5rem 0;
     font-family: var(--font-main);
-    font-size: 1.2rem; /* Reduced font size */
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
 .spec {
     display: flex;
     align-items: baseline; /* Align text nicely */
-    font-size: 0.95rem; /* Reduced font size */
-    margin-bottom: 0.4rem; /* Reduced margin */
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
     border-bottom: 1px solid rgba(0,0,0,0.05); /* Thin border */
-    padding-bottom: 0.4rem; /* Reduced padding */
+    padding-bottom: 0.3rem;
 }
 
 .spec-label {
@@ -542,4 +542,22 @@ Cover Page Specific Styles
 
 .cover-footer .page-nav {
     gap: 0.5rem; /* Reduce space between page number and button */
+}
+
+/* --- Compact cards & subgroup helpers --- */
+.product-subgroup-title {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  margin: 0.25rem 0 0.5rem;
+  opacity: .85;
+}
+.product-subgroup {
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+/* Make the DATASHEET area a link when a URL is present */
+.product-datasheet a {
+  color: inherit;
+  text-decoration: none;
 }
