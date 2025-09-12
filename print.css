@@ -73,15 +73,36 @@ FORCE BUTTON STYLES FOR PDF EXPORT
 }
 
 /* --- Cover Page Print-Specific Adjustments --- */
-/* This pulls the main content block (including the yellow right bar) up
-   behind the header. The header has no background, so the yellow bar
-   is visible, achieving the "hooked" effect at the top of the page. */
-#cover.page .cover-main-content {
-    margin-top: -40mm;
+#cover.page {
+    position: relative; /* Ensure it's a positioning context */
 }
 
-/* This adds padding to the left-side content to push it down,
-   so it doesn't render underneath the header's text and logo. */
+#cover.page .header-container,
+#cover.page .cover-footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* Make the main content a full-page layer behind the header/footer */
+#cover.page .page-content.content-cover {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    z-index: 1;
+}
+
+#cover.page .cover-main-content {
+    height: 100%;
+}
+
+/* Adjust content to appear below the overlaid header */
 #cover.page .cover-left {
-    padding-top: 40mm !important;
+    padding-top: 50mm !important;
+}
+#cover.page .cover-right {
+    padding-top: 50mm !important;
+    justify-content: flex-start;
 }
