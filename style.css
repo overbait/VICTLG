@@ -62,7 +62,7 @@ body {
 }
 
 .header-container {
-    padding: 0 15mm;
+    padding: 0 15mm; /* Standard padding - no top padding for regular pages */
     background-color: var(--page-bg-color); /* Ensure header container has background */
     position: relative; /* Create stacking context */
     z-index: 1; /* Bring header above yellow background */
@@ -130,16 +130,7 @@ body {
     position: relative;
 }
 
-.content-cover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 35%;
-    background-color: var(--accent-color);
-    z-index: 0;
-}
+/* Yellow background moved to #cover.page::before */
 .content-cover h1 {
     font-size: 3.5rem;
 }
@@ -163,9 +154,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-top: 1px solid var(--border-color);
-    padding: 10mm 15mm 0;
+    border-top: 6px solid #273638;
+    padding: 10mm 15mm 10mm; /* Added bottom padding for gap */
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 .footer-left {
@@ -406,32 +398,43 @@ p {
 /* --- Cover Page Specific Styles --- */
 
 #cover.page {
-    padding-top: 0;
-    padding-bottom: 0;
+    /* Remove custom padding to use standard .page layout */
     position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Yellow background for entire cover page - starts from top */
+#cover.page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    background-color: var(--accent-color);
+    z-index: 0; /* Behind all content */
 }
 
 
 #cover .header-container {
-    padding-top: 10mm; /* Added top padding */
-    background-color: var(--page-bg-color); /* Ensure header has a background */
+    padding-top: 10mm; /* Special top padding for cover page */
+    background: linear-gradient(to right, var(--page-bg-color) 65%, transparent 65%); /* Partial background */
     position: relative; /* Create stacking context */
     z-index: 2; /* Bring header above yellow background */
-    overflow: hidden; /* Crucial for cutting off the yellow */
+    overflow: visible; /* Allow yellow background to show through */
 }
 
 #cover .cover-main-content {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 10mm 0; /* Added vertical padding here */
+    padding: 0; /* Remove padding - handled by parent .content-cover */
     flex-grow: 1;
     position: relative;
     z-index: 2; /* Ensure main content is above yellow background */
 }
 
 #cover.page .cover-footer {
-    padding-bottom: 10mm; /* Added bottom padding here */
+    /* Inherit standard footer styles from .cover-footer */
 }
 
 /* Removed cover-background-element and z-index rules */
@@ -459,13 +462,13 @@ p {
     flex-direction: column;
     justify-content: center; /* Vertically center the main content block */
     align-items: stretch; /* Stretch to full width */
-    padding: 0; /* Remove all padding */
+    padding: 10mm 15mm; /* Use standard page-content padding */
     position: relative; /* For positioning decorative elements */
 }
 
 .cover-main-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Back to space-between for HTML version */
     align-items: stretch; /* Stretch columns to full height */
     padding: 0; /* Remove padding to allow full-width background */
     flex-grow: 1; /* Make it take the remaining space */
@@ -473,24 +476,24 @@ p {
 }
 
 .cover-left {
-    flex-basis: 65%;
-    padding: 2rem 15mm;
+    flex-basis: 65%; /* Back to flex-basis for HTML version */
+    padding: 2rem 0; /* Remove horizontal padding - handled by parent */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Move content up */
-    padding-top: 8rem; /* Pushed title down */
+    padding-top: 4rem; /* Reduced padding */
     position: relative; /* For positioning decorative elements */
     background-color: var(--page-bg-color);
     z-index: 1;
 }
 
 .cover-right {
-    flex-basis: 35%;
+    flex-basis: 35%; /* Back to flex-basis for HTML version */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center content horizontally within yellow area */
     background-color: transparent; /* Changed to transparent for pseudo-element */
-    padding: 2rem 1rem; /* Adjust padding for narrower column */
+    padding: 2rem; /* Equal padding on all sides */
     justify-content: center; /* Center content vertically */
     position: relative;
     z-index: 1; /* Ensure content is above yellow pseudo-element */
@@ -524,7 +527,7 @@ p {
     line-height: 1;
     border-bottom: 4px solid #333; /* Thinner underline */
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: center; /* Center align on yellow background */
 }
 
 .info-box {
@@ -576,9 +579,14 @@ p {
 
 /* --- Cover Footer --- */
 .cover-footer {
-    border: none;
+    border-top: 6px solid #273638;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
     align-items: center;
-    padding: 0 15mm; /* Add horizontal padding to the footer */
+    padding: 10mm 15mm 10mm; /* Match other page footers with bottom gap */
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .cover-footer .footer-content-wrapper {
@@ -586,11 +594,11 @@ p {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-top: 6px solid #273638; /* The separator line */
-    padding-top: 10mm; /* Space above the content */
+    border-top: none; /* Remove duplicate border */
+    padding-top: 0; /* Remove duplicate padding */
     position: relative; /* Create a new stacking context */
     z-index: 2; /* Ensure footer content is above yellow background */
-    background-color: var(--page-bg-color); /* Add background to footer to cover yellow */
+    background-color: transparent; /* Remove duplicate background */
     overflow: hidden; /* Hide any overflow from yellow element */
 }
 
