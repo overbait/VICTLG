@@ -250,7 +250,11 @@ p {
 
 .product-card {
     display: flex;
+<<<<<<< HEAD
     align-items: stretch; /* Ensure children match card height */
+=======
+    align-items: stretch; /* Ensure children match card height without forcing page stretch */
+>>>>>>> a735bd92022db8a2fc675f0e2074b4ec829ab2c7
     border-radius: 4px;
     overflow: hidden;
     height: 100px; /* Fixed height for consistent card size */
