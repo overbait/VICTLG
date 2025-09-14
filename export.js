@@ -57,6 +57,20 @@ const path = require('path');
                         prevBtn.parentNode.replaceChild(link, prevBtn);
                     }
                 }
+
+                // Handle Contact Button - always link to last page
+                const contactBtn = currentPage.querySelector('.contact-bar');
+                if (contactBtn && pages.length > 0) {
+                    const lastPageId = pages[pages.length - 1].id;
+                    if (lastPageId) {
+                        const link = document.createElement('a');
+                        link.href = `#${lastPageId}`;
+                        link.className = contactBtn.className;
+                        link.innerHTML = contactBtn.innerHTML;
+                        link.style.cssText = contactBtn.style.cssText;
+                        contactBtn.parentNode.replaceChild(link, contactBtn);
+                    }
+                }
             });
         });
 

@@ -222,3 +222,20 @@ FORCE BUTTON STYLES FOR PDF EXPORT
     cursor: pointer !important;
     font-family: 'Orbitron', sans-serif !important;
 }
+
+/* Force CONTACT button styles for PDF export - same as PREV/NEXT buttons */
+.contact-bar {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+
+    display: inline-block !important;
+    background-color: #273638 !important;
+    border: none !important;
+    color: #d6e6eb !important;
+    padding: 0.5rem 1rem !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+}
