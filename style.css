@@ -173,6 +173,12 @@ body {
     font-family: var(--font-main);
     font-size: 0.9rem;
     text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-bar:hover {
+    background-color: #3a4a4d;
 }
 
 .barcode {
@@ -331,26 +337,103 @@ p {
 .toc-nav ul {
     list-style: none;
     padding-left: 0;
-    font-size: 1.2rem;
-    line-height: 2.5;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+.toc-nav li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
 }
 .toc-nav a {
     text-decoration: none;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.2rem 0;
+}
+.toc-text {
+    flex-shrink: 0;
+    font-weight: 500;
+    min-width: 200px;
+}
+.toc-dots {
+    flex-grow: 1;
+    margin: 0 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: #999;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.toc-dots::after {
+    content: "................................................................................................................";
+}
+.toc-page {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: #666;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
 }
 .service-block {
     margin-bottom: 1.5rem;
     padding-left: 1rem;
     border-left: 2px solid var(--accent-color);
 }
-.contact-grid {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
+/* --- Enhanced Contact Page Styles --- */
+.contact-enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 600px;
 }
-.contact-grid span:first-child {
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background-color: #c4e3e8;
+    border-radius: 8px;
+    border: 1px solid #aed9e0;
+}
+
+.contact-label {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
     font-weight: 700;
+    color: #273638;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.contact-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    flex-shrink: 0;
 }
 
 /* --- Decorative Elements --- */
@@ -391,6 +474,145 @@ p {
     position: relative; /* For absolute positioning of children */
     font-size: 0.75rem; /* Make DATASHEET text smaller */
     align-self: stretch; /* Make the strip match the card height */
+}
+
+/* --- Feature Cards --- */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: #c4e3e8;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #aed9e0;
+}
+
+.feature-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #273638;
+}
+
+.feature-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: #c4e3e8;
+    border-radius: 4px;
+    padding: 1rem;
+    border: 1px solid #aed9e0;
+}
+
+.service-item h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #273638;
+}
+
+.service-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* --- Services Note --- */
+.services-note {
+    margin-top: 2rem;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- Two Column Layout --- */
+.two-column-layout {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.column-left, .column-right {
+    flex: 1;
+}
+
+.column-left {
+    padding-right: 1rem;
+    border-right: 2px solid #d6e6eb;
+}
+
+.column-right {
+    padding-left: 1rem;
+}
+
+/* --- Content with Images Layout --- */
+.content-with-images {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.content-left {
+    flex: 2;
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* --- Image Placeholders --- */
+.image-placeholder {
+    background-color: #d0dce2;
+    border: 2px dashed #b0c4de;
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder.small {
+    min-height: 80px;
+    padding: 1rem;
+}
+
+.placeholder-text {
+    font-size: 0.8rem;
+    color: #666;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+}
+
+/* --- Inspection and Modelling Sections --- */
+.inspection-section, .modelling-section {
+    margin-bottom: 2rem;
+}
+
+.inspection-section h3, .modelling-section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .product-datasheet span {

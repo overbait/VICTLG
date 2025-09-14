@@ -44,6 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Contact buttons - navigate to last page
+        const contactButtons = document.querySelectorAll('.contact-bar');
+        contactButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showPage(totalPages - 1); // Navigate to last page (contact page)
+            });
+        });
+
     }
 
 // Product to image mapping
