@@ -575,7 +575,11 @@ p {
     width: 70px; /* Made wider */
     height: 280px; /* Increased height */
     left: auto; /* Position using right to align with yellow area */
+<<<<<<< HEAD
     right: 280px; /* Compensate for page padding so edge is flush with yellow */
+=======
+    right: 35%; /* Right edge flush with start of yellow background */
+>>>>>>> a735bd92022db8a2fc675f0e2074b4ec829ab2c7
     transform: none; /* No horizontal translation */
     background-color: transparent;
     background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='10' height='10' fill='%23a8b8c0'/%3e%3c/svg%3e");
