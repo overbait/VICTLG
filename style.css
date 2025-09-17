@@ -98,17 +98,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 5px; /* Add padding to make space for the underline */
 }
 
 .logo-container::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 5px; /* Thickness of the underline */
+    height: 20mm; /* Match logo height */
     background-color: #009EE3;
+    z-index: -1; /* Place it behind the content */
 }
 
 .logo-subtitle {
