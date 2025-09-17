@@ -91,13 +91,24 @@ body {
     width: auto;
     object-fit: contain;
     max-width: 50mm;
-    position: relative; /* Ensure logo is rendered above the wrapper's background */
+    display: block; /* Important for correct sizing of the wrapper */
 }
 
 .logo-image-wrapper {
+    position: relative;
     display: inline-block;
-    background-color: #00c4e3;
-    line-height: 0; /* Collapse extra space */
+    line-height: 0;
+}
+
+.logo-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    z-index: -1;
 }
 
 .logo-container {
