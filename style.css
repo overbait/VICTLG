@@ -92,6 +92,8 @@ body {
     object-fit: contain;
     max-width: 50mm;
     display: block; /* Important for correct sizing of the wrapper */
+    position: relative; /* Create stacking context */
+    z-index: 1; /* Ensure logo is above pseudo-element */
 }
 
 .logo-image-wrapper {
