@@ -93,22 +93,26 @@ body {
     max-width: 50mm;
 }
 
-.logo-container {
+.logo-image-wrapper {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: inline-block;
 }
 
-.logo-container::after {
+.logo-image-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 20mm; /* Match logo height */
+    height: 100%;
     background-color: #009EE3;
-    z-index: -1; /* Place it behind the content */
+    z-index: -1;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .logo-subtitle {
