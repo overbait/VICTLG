@@ -9,7 +9,8 @@ Inspired by game UIs and technical schematics.
     --page-bg-color: #d6e6eb; /* Soft, light grayish-blue for the page */
     --text-color: #333333; /* Softer dark grey for text */
     --accent-bg-color: #b0c4de; /* Darker blue for accents */
-    --accent-color: #ffef00; /* Neon Yellow */
+    --accent-color: #009EE3; /* VI Blue */
+    /* --accent-color-fallback: #ffef00; */ /* Neon Yellow */
     --border-color: #ced4da; /* Light Grey */
     --font-main: 'Orbitron', sans-serif;
     --font-body: 'Exo 2', sans-serif;
@@ -93,9 +94,21 @@ body {
 }
 
 .logo-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 5px; /* Add padding to make space for the underline */
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Thickness of the underline */
+    background-color: #009EE3;
 }
 
 .logo-subtitle {
