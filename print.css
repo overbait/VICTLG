@@ -38,7 +38,7 @@ body {
     bottom: 0 !important;
     right: 0 !important;
     width: 35% !important;
-    background-color: #009EE3 !important; /* Direct color value instead of CSS variable */
+    background-color: #00c4e3 !important; /* VI Blue */
     z-index: 0 !important; /* Behind all content */
 }
 
