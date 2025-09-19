@@ -232,6 +232,10 @@ body {
 .mono {
     font-family: var(--font-mono);
 }
+
+.no-caps {
+    text-transform: none;
+}
 .numbered-header {
     font-size: 2rem;
     font-weight: 700;
