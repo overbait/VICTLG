@@ -87,7 +87,6 @@ body {
 }
 .page-logo {
     height: 20mm; /* Increased logo size */
-    margin-bottom: 0.2rem;
     width: auto;
     object-fit: contain;
     max-width: 50mm;
@@ -100,6 +99,7 @@ body {
     position: relative;
     display: inline-block;
     line-height: 0;
+    margin-bottom: 0.2rem;
 }
 
 .logo-image-wrapper::after {

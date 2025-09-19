@@ -239,3 +239,26 @@ FORCE BUTTON STYLES FOR PDF EXPORT
     font-size: 0.9rem !important;
     text-align: center !important;
 }
+
+/* Force logo background for PDF export */
+.logo-image-wrapper {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    position: relative !important;
+    display: inline-block !important;
+    line-height: 0 !important;
+    margin-bottom: 0.2rem !important;
+}
+
+.logo-image-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #00c4e3 !important; /* VI Blue */
+    z-index: -1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
