@@ -57,15 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // Product to image mapping
 const productImageMap = {
   // TRANSMITTERS
-  'V25-850M': 'V25.jpg',
-  'V50-850M': 'V50.jpg',
-  'VM100-850M': 'VM100.jpg',
+  'V25-850M': 'D60.jpg',
+  'V50-850M': 'D60.jpg',
+  'VM100-850M': 'D60.jpg',
   'T56-850': 'T56-250C.jpg',
-  'V25-1550M': 'V25.jpg',
+  'V25-1550M': 'D60.jpg',
 
   // RECEIVERS
   'R56-850': 'R56-850.jpg',
-  'D30-850M': 'D35.jpg', // closest match
+  'D30-850M': 'D60.jpg',
   'D60M FC': 'D60.jpg',
 
   // ICS
@@ -78,12 +78,12 @@ const productImageMap = {
   'VM100 880': 'VM100.jpg',
   'VM100 910': 'VM100.jpg',
   'VM100 940': 'VM100.jpg',
-  'VM100 850 MA-SM': 'VM100.jpg',
-  'VM100 880 MA-SM': 'VM100.jpg',
-  'VM100 910 MA-SM': 'VM100.jpg',
-  'VM100 940 MA-SM': 'VM100.jpg',
-  'VM100 850 qSM': 'VM100.jpg',
-  'VM100 910 qSM': 'VM100.jpg',
+  'VM100 850 MA-SM': 'VM100MA.jpg',
+  'VM100 880 MA-SM': 'VM100MA.jpg',
+  'VM100 910 MA-SM': 'VM100MA.jpg',
+  'VM100 940 MA-SM': 'VM100MA.jpg',
+  'VM100 850 qSM': 'V25.jpg',
+  'VM100 910 qSM': 'V25.jpg',
 
   // CHIPS - V50/VM50 series
   'V50 850': 'V50.jpg',
@@ -96,7 +96,7 @@ const productImageMap = {
   'D40 SWDM': 'D40.jpg',
   'D35 SWDM': 'D35.jpg',
   'D30 SWDM': 'D35.jpg', // closest match
-  'D70 SWDM': 'D60.jpg', // closest match
+  'D70 SWDM': 'D40.jpg',
   'D400G': 'D40.jpg' // closest match
 };
 
