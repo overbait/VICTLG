@@ -657,6 +657,10 @@ p {
 
 #cover.page {
     /* Remove custom padding to use standard .page layout */
+    --cover-accent-width: 35%;
+    --cover-main-width: calc(100% - var(--cover-accent-width));
+    --cover-horizontal-padding: 15mm;
+    --cover-accent-width-abs: calc(210mm * 0.35);
     position: relative; /* Needed for pseudo-element positioning */
 }
 
@@ -667,7 +671,7 @@ p {
     top: 0;
     bottom: 0;
     right: 0;
-    width: 35%;
+    width: var(--cover-accent-width);
     background-color: var(--accent-color);
     z-index: 0; /* Behind all content */
 }
@@ -675,19 +679,17 @@ p {
 
 #cover .header-container {
     padding-top: 10mm; /* Special top padding for cover page */
-    background: linear-gradient(to right, var(--page-bg-color) 65%, transparent 65%); /* Partial background */
+    background: linear-gradient(
+        to right,
+        var(--page-bg-color) var(--cover-main-width),
+        transparent var(--cover-main-width)
+    ); /* Partial background tied to accent width */
     position: relative; /* Create stacking context */
     z-index: 2; /* Bring header above yellow background */
     overflow: visible; /* Allow yellow background to show through */
 }
 
 #cover .cover-main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 0; /* Remove padding - handled by parent .content-cover */
-    flex-grow: 1;
-    position: relative;
     z-index: 2; /* Ensure main content is above yellow background */
 }
 
@@ -702,7 +704,7 @@ p {
 .cover-header .header-top {
     border-bottom: 6px solid #273638;
     padding-bottom: 0.5rem;
-    width: 65%; /* Make the delimiter match the background split */
+    width: var(--cover-main-width); /* Match the background split */
 }
 
 .cover-header .header-left {
@@ -717,21 +719,25 @@ p {
     flex-direction: column;
     justify-content: center; /* Vertically center the main content block */
     align-items: stretch; /* Stretch to full width */
-    padding: 10mm 15mm; /* Use standard page-content padding */
+    padding: 10mm var(--cover-horizontal-padding); /* Use standard page-content padding */
     position: relative; /* For positioning decorative elements */
 }
 
 .cover-main-content {
     display: flex;
-    justify-content: space-between; /* Back to space-between for HTML version */
+    justify-content: flex-start; /* Match print layout */
     align-items: stretch; /* Stretch columns to full height */
     padding: 0; /* Remove padding to allow full-width background */
     flex-grow: 1; /* Make it take the remaining space */
     position: relative; /* New positioning context */
+    z-index: 2; /* Ensure main content is above yellow background */
 }
 
 .cover-left {
-    flex-basis: 65%; /* Back to flex-basis for HTML version */
+    flex: 0 0 var(--cover-main-width);
+    width: var(--cover-main-width);
+    max-width: var(--cover-main-width);
+    margin-right: var(--cover-accent-width); /* Reserve space for the accent column */
     padding: 2rem 0; /* Remove horizontal padding - handled by parent */
     display: flex;
     flex-direction: column;
@@ -743,15 +749,20 @@ p {
 }
 
 .cover-right {
-    flex-basis: 35%; /* Back to flex-basis for HTML version */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--cover-accent-width);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally within yellow area */
     background-color: transparent; /* Changed to transparent for pseudo-element */
-    padding: 2rem; /* Equal padding on all sides */
+    padding: 2rem 1.5rem; /* Match print layout */
     justify-content: center; /* Center content vertically */
-    position: relative;
     z-index: 1; /* Ensure content is above yellow pseudo-element */
+    text-align: center;
 }
 
 .cover-title {
@@ -781,13 +792,20 @@ p {
     color: #333;
     line-height: 1;
     border-bottom: 4px solid #333; /* Thinner underline */
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     text-align: center; /* Center align on yellow background */
+    display: inline-block;
+    width: auto;
+    padding: 0;
 }
 
 .info-box {
     padding: 0;
     color: #333;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    display: block;
 }
 
 .info-box p {
@@ -798,6 +816,7 @@ p {
     text-transform: none;
     font-weight: 300;
     color: #555;
+    text-align: left;
 }
 
 .info-box p strong {
@@ -813,23 +832,23 @@ p {
 /* --- Cover Decorative Elements --- */
 .decorative-element {
     position: absolute;
-    width: 70px; /* Made wider */
-    height: 280px; /* Increased height */
+    width: calc(var(--cover-accent-width-abs) * 0.25);
+    height: var(--cover-accent-width-abs);
     left: auto; /* Position using right to align with yellow area */
-    right: 280px; /* Compensate for page padding so edge is flush with yellow */
+    right: var(--cover-accent-width); /* Align with accent column */
     transform: none; /* No horizontal translation */
     background-color: transparent;
     background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='10' height='10' fill='%23a8b8c0'/%3e%3c/svg%3e");
-    background-size: 20px 20px;
+    background-size: calc(var(--cover-accent-width-abs) / 14) calc(var(--cover-accent-width-abs) / 14);
     z-index: 2;
 }
 
 .decorative-element.top {
-    top: -180px; /* Move slightly higher to increase separation */
+    top: calc(var(--cover-accent-width-abs) * -0.65); /* Move slightly higher to increase separation */
 }
 
 .decorative-element.bottom {
-    bottom: -35px; /* Move slightly lower to increase separation */
+    bottom: calc(var(--cover-accent-width-abs) * -0.12); /* Move slightly lower to increase separation */
 }
 
 
