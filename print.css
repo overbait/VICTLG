@@ -208,6 +208,8 @@ body {
 .catalog-image {
     background-color: #d0dce2 !important;
     border-radius: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
     margin: 0 !important;
     overflow: hidden !important;
     width: 100% !important;
@@ -219,11 +221,23 @@ body {
     height: auto !important;
 }
 
+.catalog-caption {
+    margin: 0 !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+    color: #273638 !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-top: 1px solid #c2d4dd !important;
+}
+
 .catalog-image--lab {
-    aspect-ratio: 1018 / 464 !important;
+    margin-top: 1.5rem !important;
+    height: 240px !important;
 }
 
 .catalog-image--lab img {
+    width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
 }

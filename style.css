@@ -624,7 +624,8 @@ p {
 .catalog-image {
     background-color: #d0dce2;
     border-radius: 4px;
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     overflow: hidden;
     width: 100%;
@@ -636,11 +637,23 @@ p {
     height: auto;
 }
 
+.catalog-caption {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    color: #273638;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #c2d4dd;
+}
+
 .catalog-image--lab {
-    aspect-ratio: 1018 / 464;
+    margin-top: 2rem;
+    height: clamp(240px, 28vw, 320px);
 }
 
 .catalog-image--lab img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
