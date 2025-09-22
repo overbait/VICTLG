@@ -205,6 +205,43 @@ body {
     opacity: 1 !important;
 }
 
+.catalog-image {
+    background-color: #c4e3e8 !important;
+    border-radius: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.catalog-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.catalog-caption {
+    margin: 0 !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+    color: #273638 !important;
+    background-color: #c4e3e8 !important;
+    border-top: 1px solid #b0c4de !important;
+}
+
+.catalog-image--lab {
+    margin-top: 0.3rem !important;
+    height: 240px !important;
+}
+
+.catalog-image--lab img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
 /* ---
 FORCE BUTTON STYLES FOR PDF EXPORT
 --- */
