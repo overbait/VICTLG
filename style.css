@@ -621,6 +621,30 @@ p {
     padding: 1rem;
 }
 
+.catalog-image {
+    background-color: #d0dce2;
+    border-radius: 4px;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.catalog-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.catalog-image--lab {
+    aspect-ratio: 1018 / 464;
+}
+
+.catalog-image--lab img {
+    height: 100%;
+    object-fit: cover;
+}
+
 .placeholder-text {
     font-size: 0.8rem;
     color: #666;

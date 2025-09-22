@@ -205,6 +205,29 @@ body {
     opacity: 1 !important;
 }
 
+.catalog-image {
+    background-color: #d0dce2 !important;
+    border-radius: 4px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.catalog-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.catalog-image--lab {
+    aspect-ratio: 1018 / 464 !important;
+}
+
+.catalog-image--lab img {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
 /* ---
 FORCE BUTTON STYLES FOR PDF EXPORT
 --- */
