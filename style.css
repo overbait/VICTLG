@@ -465,7 +465,7 @@ p {
 /* --- Product Navigation --- */
 .product-nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     margin: 0; /* Reset margins */
     padding: 0; /* Reset padding */
     border: none; /* Remove border */
@@ -477,6 +477,119 @@ p {
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.9rem;
+}
+
+.page-content--products {
+    padding-top: 7mm;
+    padding-bottom: 7mm;
+}
+
+.product-focus {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(170px, 1fr);
+    gap: 0.75rem;
+    margin: 0.6rem 0 0.75rem;
+    padding: 0.7rem;
+    background-color: #c4e3e8;
+    border: 1px solid #aed9e0;
+    border-radius: 4px;
+}
+
+.product-focus-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: #273638;
+    margin-bottom: 0.25rem;
+}
+
+.product-focus h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.92rem;
+}
+
+.product-focus p,
+.product-note {
+    margin: 0;
+    font-size: 0.68rem;
+    line-height: 1.35;
+}
+
+.product-focus-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+}
+
+.focus-fact {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 0.45rem;
+    min-width: 0;
+}
+
+.focus-fact span,
+.focus-fact strong {
+    display: block;
+}
+
+.focus-fact span {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: #666;
+}
+
+.focus-fact strong {
+    font-size: 0.68rem;
+    line-height: 1.2;
+}
+
+.product-subgroup--catalog {
+    margin-bottom: 0.55rem;
+    padding-left: 0;
+}
+
+.product-subgroup--catalog .product-subgroup-title {
+    margin: 0.35rem 0 0.25rem;
+    font-size: 0.86rem;
+}
+
+.product-grid--compact {
+    margin-top: 0.35rem;
+}
+
+.product-card--compact {
+    height: 76px;
+}
+
+.product-card--compact + .product-card--compact {
+    margin-top: 0.28rem;
+    padding-top: 0.28rem;
+}
+
+.product-card--compact .product-image-placeholder {
+    width: 112px;
+}
+
+.product-card--compact .product-details {
+    padding: 0.32rem 0.45rem;
+}
+
+.product-card--compact .product-details h4 {
+    font-size: 0.82rem;
+    line-height: 1.05;
+}
+
+.product-card--compact .spec {
+    font-size: 0.66rem;
+    line-height: 1.12;
+}
+
+.product-card--compact .spec-label {
+    width: 82px;
+}
+
+.product-card--compact .product-datasheet {
+    width: 1.9rem;
+    font-size: 0.55rem;
 }
 
 /* --- Product Datasheet Button --- */

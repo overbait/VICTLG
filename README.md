@@ -1,6 +1,6 @@
 # VI SYSTEMS - Product Catalog Viewer
 
-This project is a simple web-based viewer for the VI SYSTEMS 2025 product catalog.
+This project is a simple web-based viewer for the VI SYSTEMS 2026 product catalog.
 
 ## Usage
 
@@ -30,4 +30,4 @@ Once the dependencies are installed, you can generate the PDF by running the exp
 node export.js
 ```
 
-This will create a file named `VIS-Product-Catalog-2025.pdf` in the root of the project directory.
+This will create a file named `VIS-Product-Catalog-2026.pdf` in the root of the project directory.

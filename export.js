@@ -77,7 +77,7 @@ const path = require('path');
         // Generate the PDF
         console.log('Generating PDF...');
         await page.pdf({
-            path: 'VIS-Product-Catalog-2025.pdf',
+            path: 'VIS-Product-Catalog-2026.pdf',
             format: 'A4',
             printBackground: true, // Important for backgrounds and colors
             margin: {
@@ -88,7 +88,7 @@ const path = require('path');
             },
         });
 
-        console.log('PDF generated successfully: VIS-Product-Catalog-2025.pdf');
+        console.log('PDF generated successfully: VIS-Product-Catalog-2026.pdf');
 
     } catch (error) {
         console.error('An error occurred during PDF generation:', error);

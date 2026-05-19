@@ -82,6 +82,10 @@ const productImageMap = {
   'VM100 880 MA-SM': 'VM100MA.jpg',
   'VM100 910 MA-SM': 'VM100MA.jpg',
   'VM100 940 MA-SM': 'VM100MA.jpg',
+  'VM100 850 MA SM': 'VM100MA.jpg',
+  'VM100 880 MA SM': 'VM100MA.jpg',
+  'VM100 910 MA SM': 'VM100MA.jpg',
+  'VM100 940 MA SM': 'VM100MA.jpg',
   'VM100 850 qSM': 'V25.jpg',
   'VM100 910 qSM': 'V25.jpg',
 
@@ -89,6 +93,11 @@ const productImageMap = {
   'V50 850': 'V50.jpg',
   'VM50 940': 'V50.jpg', // closest match
   'V25 940 HP MA': 'V25.jpg',
+  'V-MA HP 850C1': 'VM100MA.jpg',
+  'S-940-MC46': 'V25.jpg',
+  'S-940-SG-MA-HP': 'V25.jpg',
+  'S-850-MA': 'V25.jpg',
+  'S-940-MC60': 'V25.jpg',
   'VM50 850': 'V50.jpg',
   'V25 850 HT': 'V25.jpg',
 
@@ -97,7 +106,18 @@ const productImageMap = {
   'D35 SWDM': 'D35.jpg',
   'D30 SWDM': 'D35.jpg', // closest match
   'D70 SWDM': 'D40.jpg',
-  'D400G': 'D40.jpg' // closest match
+  'D35-50-SWDMC1': 'D35.jpg',
+  'D25 50 SWDMC1': 'D35.jpg',
+  'D70 SWDMCX': 'D40.jpg',
+  'D85 SWDMC1': 'D40.jpg',
+  'D400G': 'D40.jpg', // closest match
+
+  // 2026 modules, boards and assemblies
+  'HF MA modules': 'VM100MA.jpg',
+  'Driver evaluation board': 'A56.jpg',
+  'Receiver evaluation board': 'R56-850.jpg',
+  'Receiver': 'R56-850.jpg',
+  'Transmitter': 'T56-250C.jpg'
 };
 
 function addProductImages() {
